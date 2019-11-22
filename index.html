@@ -160,7 +160,7 @@ function highlightFeature(e){
 }
         // load GeoJSON from an external file
        var neighborhoodsLayer = null;
-$.getJSON("blood_lead.geojson",function(data){
+$.getJSON("data/blood_lead.geojson",function(data){
     neighborhoodsLayer = L.geoJson(data, {
         style: styleFunc,
         onEachFeature: function(feature, layer){
@@ -202,25 +202,6 @@ legend.onAdd = function (map) {
 // Add Legend to Map
 legend.addTo(map);
 
-app.use(function (req, res, next) {
-  /*var err = new Error('Not Found');
-   err.status = 404;
-   next(err);*/
-
-  // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', '*');
-
-  // Request methods you wish to allow
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-  // Request headers you wish to allow
-  res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,X-Access-Token,XKey,Authorization');
-
-//  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-
-  // Pass to next layer of middleware
-  next();
-});
 
     </script>
 </body>
